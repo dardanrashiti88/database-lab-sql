@@ -16,7 +16,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: rootpasswor
+          MYSQL_ROOT_PASSWORD: rootpassword
           MYSQL_DATABASE: liverpool_db
           MYSQL_USER: liverpool_db
           MYSQL_PASSWORD: liverpoolpassword
