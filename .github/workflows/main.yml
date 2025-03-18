@@ -16,24 +16,19 @@ jobs:
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2
 
-      - name: Set up Docker Compose
-        uses: docker/setup-buildx-action@v2
+      - name: Log in to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build Docker Compose
-        run: |
-          docker-compose -f docker-compose.yml build
+        run: docker-compose -f docker-compose.yml build
 
       - name: Run Docker Compose Up
-        run: |
-          docker-compose -f docker-compose.yml up -d
+        run: docker-compose -f docker-compose.yml up -d
 
       - name: Run Tests (optional)
-        run: |
-          echo "Running tests..."
+        run: echo "Running tests..."
 
       - name: Push Docker Images to Docker Hub (optional)
-        run: |
-          docker-compose -f docker-compose.yml push
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: docker-compose -f docker-compose.yml push
+
