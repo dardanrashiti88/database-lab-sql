@@ -5,10 +5,17 @@ This project is a MySQL database designed to store and manage statistics for Liv
 
 Features
 Stores statistics for Liverpool FC players.
+
 Includes a table with columns for player names, positions, matches played, goals scored, and assists.
+
 Dockerized environment for easy setup and deployment.
+
 phpMyAdmin is included to interact with the database via a web interface.
+
 Technology Stack
+
 MySQL 8.0: Database management system.
+
 Docker: To containerize the database and phpMyAdmin.
+
 phpMyAdmin: Web-based interface to manage the MySQL database.
