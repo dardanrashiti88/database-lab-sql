@@ -28,8 +28,8 @@ jobs:
       - name: Build and Run Docker Containers
         run: docker-compose -f docker-compose.yml up -d --build
 
-      - name: Run Tests (optional)
-        run: echo "Running tests..."
+      - name: Run Tests 
+        run: echo "Running tests"
 
       - name: Push Docker Images to Docker Hub (optional)
         run: docker-compose -f docker-compose.yml push
