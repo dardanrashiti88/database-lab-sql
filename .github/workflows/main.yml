@@ -32,7 +32,6 @@ jobs:
 
       - name: Run Tests (optional)
         run: |
-          # Run tests here if needed
           echo "Running tests..."
 
       - name: Push Docker Images to Docker Hub (optional)
